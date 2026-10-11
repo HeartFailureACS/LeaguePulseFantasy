@@ -16,6 +16,7 @@ import { DEFAULT_THEME } from '@/lib/themeConfig';
 import RouteProgress from '@/components/layout/RouteProgress';
 import AppLoader from '@/components/layout/AppLoader';
 import FeedbackProvider from '@/components/layout/FeedbackProvider';
+import { Analytics as VercelAnalytics } from '@vercel/analytics/next';
 
 const displayFont = Space_Grotesk({
   subsets:  ['latin'],
@@ -100,6 +101,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             </div>
           </InstallPromptProvider>
         </ThemeProvider>
+        <VercelAnalytics />
       </body>
     </html>
   );
